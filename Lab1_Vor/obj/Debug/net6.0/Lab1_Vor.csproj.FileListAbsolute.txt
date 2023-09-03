@@ -1,0 +1,14 @@
+C:\Тестирование\Lab1_Vor\Lab1_Vor\bin\Debug\net6.0\Lab1_Vor.exe
+C:\Тестирование\Lab1_Vor\Lab1_Vor\bin\Debug\net6.0\Lab1_Vor.deps.json
+C:\Тестирование\Lab1_Vor\Lab1_Vor\bin\Debug\net6.0\Lab1_Vor.runtimeconfig.json
+C:\Тестирование\Lab1_Vor\Lab1_Vor\bin\Debug\net6.0\Lab1_Vor.dll
+C:\Тестирование\Lab1_Vor\Lab1_Vor\bin\Debug\net6.0\Lab1_Vor.pdb
+C:\Тестирование\Lab1_Vor\Lab1_Vor\obj\Debug\net6.0\Lab1_Vor.GeneratedMSBuildEditorConfig.editorconfig
+C:\Тестирование\Lab1_Vor\Lab1_Vor\obj\Debug\net6.0\Lab1_Vor.AssemblyInfoInputs.cache
+C:\Тестирование\Lab1_Vor\Lab1_Vor\obj\Debug\net6.0\Lab1_Vor.AssemblyInfo.cs
+C:\Тестирование\Lab1_Vor\Lab1_Vor\obj\Debug\net6.0\Lab1_Vor.csproj.CoreCompileInputs.cache
+C:\Тестирование\Lab1_Vor\Lab1_Vor\obj\Debug\net6.0\Lab1_Vor.dll
+C:\Тестирование\Lab1_Vor\Lab1_Vor\obj\Debug\net6.0\refint\Lab1_Vor.dll
+C:\Тестирование\Lab1_Vor\Lab1_Vor\obj\Debug\net6.0\Lab1_Vor.pdb
+C:\Тестирование\Lab1_Vor\Lab1_Vor\obj\Debug\net6.0\Lab1_Vor.genruntimeconfig.cache
+C:\Тестирование\Lab1_Vor\Lab1_Vor\obj\Debug\net6.0\ref\Lab1_Vor.dll
