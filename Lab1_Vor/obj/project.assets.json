@@ -139,11 +139,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Тестирование\\Lab1_Vor\\Lab1_Vor\\Lab1_Vor.csproj",
+      "projectUniqueName": "C:\\Тестирование\\LAB1_PonomarevaFO\\Lab1_Vor\\Lab1_Vor.csproj",
       "projectName": "Lab1_Vor",
-      "projectPath": "C:\\Тестирование\\Lab1_Vor\\Lab1_Vor\\Lab1_Vor.csproj",
+      "projectPath": "C:\\Тестирование\\LAB1_PonomarevaFO\\Lab1_Vor\\Lab1_Vor.csproj",
       "packagesPath": "C:\\Users\\10442\\.nuget\\packages\\",
-      "outputPath": "C:\\Тестирование\\Lab1_Vor\\Lab1_Vor\\obj\\",
+      "outputPath": "C:\\Тестирование\\LAB1_PonomarevaFO\\Lab1_Vor\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
