@@ -1,104 +1,82 @@
 ﻿using Serilog;
 
-string template = "{Timestamp:HH:mm:ss} | [{Level:u3}] | {Message:lj}{NewLine}{Exeption}";
+string template = "{Timestamp:yyyy-MM-dd HH:mm:ss} | [{Level:u3}] | {Message:lj}{NewLine}{Exeption}";
 Log.Logger = (ILogger)new LoggerConfiguration().MinimumLevel.Debug().WriteTo.Console(outputTemplate: template).WriteTo.File("file_.txt", outputTemplate: template).CreateLogger();
 Log.Verbose("Логгер сконфигурирован");
 Log.Information("Приложение запущено");
 
-Console.WriteLine("Введите длину A:");
-string sideA = Console.ReadLine();
-Console.WriteLine("Введите длину B:");
-string sideB = Console.ReadLine();
-Console.WriteLine("Введите длину C:");
-string sideC = Console.ReadLine();
-
-CalculateTriangleTypeAndCoordinates(sideA, sideB, sideC);
+CalculateTriangleTypeAndCoordinates("2e", "2", "3,7");
 
 
- void  CalculateTriangleTypeAndCoordinates(string sideA, string sideB, string sideC)
+
+(string, List<(int, int)>)  CalculateTriangleTypeAndCoordinates(string sideA, string sideB, string sideC)
     {
         float a, b, c;
-        if (float.TryParse(sideA, out a) && float.TryParse(sideB, out b) && float.TryParse(sideC, out c))
+    if (float.TryParse(sideA, out a) && float.TryParse(sideB, out b) && float.TryParse(sideC, out c))
+    {
+
+        if (a + b > c && a + c > b && b + c > a)
         {
-        
-            if (a + b > c && a + c > b && b + c > a)
-            {
-            Log.Information($" Проверка неравенства треугольника a + b > c && a + c > b && b + c > a # {a+b>c} {a + c > b} {b + c > a}");
+            int Ax, Ay, Bx, By, Cx, Cy;
 
-                float scaleFactor = 100f / Math.Max(Math.Max(a, b), c);
-                int Ax = (int)(a * scaleFactor);
-                int Ay = 0;
-                int Bx = (int)(b * scaleFactor * Math.Cos(Math.Acos((c * c - b * b - a * a) / (-2 * a * b))));
-                int By = (int)(b * scaleFactor * Math.Sin(Math.Asin(Math.Sqrt(1 - Math.Pow((c * c - b * b - a * a) / (-2 * a * b), 2)))));
-                int Cx = 0;
-                int Cy = (int)(c * scaleFactor);
+            CoordinatesTriangle(sideA, sideB, sideC, a, b, c, out Ax, out Ay, out Bx, out By, out Cx, out Cy);
 
-            Log.Debug($" Вычисление координат точки А по x. Умножение {a} на {scaleFactor}, {a}, {scaleFactor}");
-            Log.Debug($" Вычисление координат точки А по y. Умножение {a} на {scaleFactor}, {a}, {scaleFactor}");
-            Log.Debug($" Вычисление координат точки B по x. Умножение {b} на {scaleFactor * Math.Sin(Math.Asin(Math.Sqrt(1 - Math.Pow((c * c - b * b - a * a) / (-2 * a * b), 2))))}, {b}, {scaleFactor * Math.Sin(Math.Asin(Math.Sqrt(1 - Math.Pow((c * c - b * b - a * a) / (-2 * a * b), 2))))}");
-            Log.Debug($" Вычисление координат точки B по y. Умножение {b} на {scaleFactor * Math.Sin(Math.Asin(Math.Sqrt(1 - Math.Pow((c * c - b * b - a * a) / (-2 * a * b), 2))))}, {b}, {scaleFactor * Math.Sin(Math.Asin(Math.Sqrt(1 - Math.Pow((c * c - b * b - a * a) / (-2 * a * b), 2))))}");
-            Log.Debug($" Вычисление координат точки C по x. Умножение {c} на {scaleFactor}, {c}, {scaleFactor}");
-            Log.Debug($" Вычисление координат точки C по y. Умножение {c} на {scaleFactor}, {c}, {scaleFactor}");
+            return ((string, List<(int, int)>))TypeTriangle(sideA, sideB, sideC, a, b, c, Ax, Ay, Bx, By, Cx, Cy);
+            
 
-            Console.WriteLine("Координата A:"+" "+ Ax + "," +Ay );
-            Log.Information($" Значение координат точки A равно # {Ax},{Ay}");
-            Console.WriteLine("Координата B:" + " " + Bx + "," +By );
-            Log.Information($" Значение координат точки B равно # {Bx},{By}");
-            Console.WriteLine("Координата C:" + " " + Cx + "," +Cy );
-            Log.Information($" Значение координат точки C равно # {Cx},{Cy}");
-
-
-            if (a == b && b == c) {
-                Log.Information("Проверка на тип треугольника");
-                Log.Debug($"Сравнение сторон a == b && b == c {a == b && b == c} ");
-                Console.WriteLine ("Тип треугольника: равносторонний");
-                Log.Information("Тип треугольника равносторонний");
-
-            }
-                
-                else if (a == b || a == c || b == c) {
-                Log.Information("Проверка на тип треугольника");
-                Log.Debug($"Сравнение сторон a == b || a == c || b == c {a == b || a == c || b == c} ");
-                Console.WriteLine ("Тип треугольника: равнобедренный");
-                Log.Information("Тип треугольника равнобедренный");
-            }
-
-            else {
-                Log.Information("Проверка на тип треугольника");
-                Console.WriteLine ("Тип треугольника: разносторонний");
-                Log.Information("Тип треугольника равзносторонний");
-
-            }
-                    
-
-                
-            }
-            else
-            {
-            Log.Error("Ошибка вычисления треугольника");
-            Log.Error("Введены числовые данные, которые не соответсвуют неравенству");
-            Console.WriteLine("Координата A: -1, -1" );
-            Log.Error("Ошибка вычисления координат точки A");
-            Console.WriteLine("Координата B: -1, -1");
-            Log.Error("Ошибка вычисления координат точки B");
-            Console.WriteLine("Координата C: -1, -1");
-            Log.Error("Ошибка вычисления координат точки C");
-
-            Console.WriteLine ("Тип треугольника: не треугольник");
-            Log.Error("Ошибка вычисления типа треугольника");
-        }
         }
         else
         {
-        Log.Error("Ошибка вычисления треугольника");
-        Log.Error("Введены невалидные(нечисловые) данные");
-        Console.WriteLine ("");
-        Console.WriteLine("Координата A: -2, -2");
-        Log.Error("Ошибка вычисления координат точки A");
-        Console.WriteLine("Координата B: -2, -2");
-        Log.Error("Ошибка вычисления координат точки B");
-        Console.WriteLine("Координата C: -2, -2");
-        Log.Error("Ошибка вычисления координат точки C");
+            
+            Log.Error($"Ошибка проверки неравенства треугольника, стороны '{sideA}', '{sideB}', '{sideC}' и ошибка вычисления координат '{(-1, -1)}', '{(-1, -1)}', '{(-1, -1)}' ");
+            return ("Тип треугольника: не треугольник", new List<(int, int)> { (-1, -1), (-1, -1), (-1, -1) });
+        }
     }
+    else
+    {
+        Log.Error($"Ошибка вычисления треугольника, стороны: '{sideA}', '{sideB}', '{sideC}' и ошибка вычисления координат {(-2, -2)},{(-2, -2)}, {(-2, -2)}");
+        return ("", new List<(int, int)> { (-2, -2), (-2, -2), (-2, -2)});
     }
 
+    static object TypeTriangle(string sideA, string sideB, string sideC, float a, float b, float c, int Ax, int Ay, int Bx, int By, int Cx, int Cy)
+    {
+        if (a == b && b == c)
+        {
+
+            Log.Debug($" Тип треугольника со сторонами {sideA}, {sideB}, {sideC}: равносторонний ");
+            return ("Тип треугольника: Равносторонний", new List<(int, int)> { (Ax, Ay), (Bx, By), (Cx, Cy) });
+
+
+
+        }
+
+        else if (a == b || a == c || b == c)
+        {
+            Log.Debug($"Тип треугольника со сторонами {sideA}, {sideB}, {sideC}: Равнобедренный");
+
+            return ("Тип треугольника: Равнобедренный", new List<(int, int)> { (Ax, Ay), (Bx, By), (Cx, Cy) });
+        }
+
+        else
+        {
+            Log.Information($"Тип треугольника со сторонами {sideA}, {sideB}, {sideC}: Разносторонний");
+
+            return ("Тип треугольника: Разносторонний", new List<(int, int)> { (Ax, Ay), (Bx, By), (Cx, Cy) });
+
+        }
+    }
+}
+
+static void CoordinatesTriangle(string sideA, string sideB, string sideC, float a, float b, float c, out int Ax, out int Ay, out int Bx, out int By, out int Cx, out int Cy)
+{
+    Log.Information($" Проверка неравенства треугольника. Точки {sideA}. {sideB}. {sideC}.  {a + b > c} {a + c > b} {b + c > a}");
+
+    float scaleFactor = 100f / Math.Max(Math.Max(a, b), c);
+    Ax = (int)(a * scaleFactor);
+    Ay = 0;
+    Bx = (int)(b * scaleFactor * Math.Cos(Math.Acos((c * c - b * b - a * a) / (-2 * a * b))));
+    By = (int)(b * scaleFactor * Math.Sin(Math.Asin(Math.Sqrt(1 - Math.Pow((c * c - b * b - a * a) / (-2 * a * b), 2)))));
+    Cx = 0;
+    Cy = (int)(c * scaleFactor);
+    Log.Information($" Вычисление координат точек {sideA}, {sideB},{sideC}");
+}

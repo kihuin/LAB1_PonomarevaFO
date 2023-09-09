@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Urrg90C3AKB0tDVECFDH6t7c5fvcyc9I17deuXASLU07BzR4sJ+4b1C8ubkeNoOBR7zZ4OcVOwf9RngNEhDUvw==",
+  "dgSpecHash": "xnpQGmf825Ye0m3ZenKtQbAXYCCzLeGrBI+IKUvGZB5wimr/7rUbzx4rWLshJceF1Jxb0XszGEVbNXxvobzBog==",
   "success": true,
-  "projectFilePath": "C:\\Тестирование\\LAB1_PonomarevaFO\\Lab1_Vor\\Lab1_Vor.csproj",
+  "projectFilePath": "C:\\Users\\ponomarevafo\\Source\\Repos\\kihuin\\LAB1_PonomarevaFO\\Lab1_Vor\\Lab1_Vor.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\10442\\.nuget\\packages\\serilog\\3.0.1\\serilog.3.0.1.nupkg.sha512",
-    "C:\\Users\\10442\\.nuget\\packages\\serilog.sinks.console\\4.1.0\\serilog.sinks.console.4.1.0.nupkg.sha512",
-    "C:\\Users\\10442\\.nuget\\packages\\serilog.sinks.file\\5.0.0\\serilog.sinks.file.5.0.0.nupkg.sha512"
+    "C:\\Users\\ponomarevafo\\.nuget\\packages\\serilog\\3.0.1\\serilog.3.0.1.nupkg.sha512",
+    "C:\\Users\\ponomarevafo\\.nuget\\packages\\serilog.sinks.console\\4.1.0\\serilog.sinks.console.4.1.0.nupkg.sha512",
+    "C:\\Users\\ponomarevafo\\.nuget\\packages\\serilog.sinks.file\\5.0.0\\serilog.sinks.file.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }
