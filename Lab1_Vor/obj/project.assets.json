@@ -133,23 +133,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ponomarevafo\\.nuget\\packages\\": {},
+    "C:\\Users\\10442\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ponomarevafo\\Source\\Repos\\kihuin\\LAB1_PonomarevaFO\\Lab1_Vor\\Lab1_Vor.csproj",
+      "projectUniqueName": "C:\\Users\\10442\\source\\repos\\LAB1_PonomarevaFO\\Lab1\\Lab1_Vor\\Lab1_Vor.csproj",
       "projectName": "Lab1_Vor",
-      "projectPath": "C:\\Users\\ponomarevafo\\Source\\Repos\\kihuin\\LAB1_PonomarevaFO\\Lab1_Vor\\Lab1_Vor.csproj",
-      "packagesPath": "C:\\Users\\ponomarevafo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ponomarevafo\\Source\\Repos\\kihuin\\LAB1_PonomarevaFO\\Lab1_Vor\\obj\\",
+      "projectPath": "C:\\Users\\10442\\source\\repos\\LAB1_PonomarevaFO\\Lab1\\Lab1_Vor\\Lab1_Vor.csproj",
+      "packagesPath": "C:\\Users\\10442\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\10442\\source\\repos\\LAB1_PonomarevaFO\\Lab1\\Lab1_Vor\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "\\\\iscsi\\profstud\\ponomarevafo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\10442\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -158,7 +158,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -206,7 +205,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
